@@ -31,15 +31,23 @@ def get_owned_games(steam_id):
 
 def get_game_details(appid):
     url = f"https://store.steampowered.com/api/appdetails?appids={appid}&l={LANGUAGE}"
-    response = requests.get(url)
-    data = response.json()
-    if not data.get(str(appid), {}).get("success"):
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+    except Exception as e:
+        print(f"Erro ao buscar detalhes do appid {appid}: {e}")
         return None
-    info = data[str(appid)]["data"]
 
-    # Check if the game is free
+    app_data = data.get(str(appid))
+    if not app_data or not app_data.get("success"):
+        print(f"❌ AppID {appid} inválido ou sem sucesso na resposta.")
+        return None
+
+    info = app_data["data"]
+
     if info.get("is_free"):
-        return None # Do not return details for free games, because they aren't shared with the family
+        return None
 
     developers = info.get("developers", [])
     developer_text = developers[0] if developers else "Desconhecido"
