@@ -61,7 +61,7 @@ The .env file contains the following variables:
 
 # ▶️ Run the application
 
-`python steam_family_notifier.py`
+`python notificar_jogos_discord.py`
 
 On the first run, the script only saves the current game list and does not send notifications.
 From the second run onwards, it detects new games and sends alerts to Discord.
@@ -88,7 +88,7 @@ pwd
 
 3. Add a job, for example to run every 6 hours:
 ```
-0 */6 * * * /usr/bin/python3 /path/to/steam_family_notifier.py
+0 */6 * * * /usr/bin/python3 /path/to/notificar_jogos_discord.py
 ```
 
 
@@ -108,6 +108,6 @@ pwd
 ```
 @echo off
 cd C:\path\to\steam_family_notifier
-python steam_family_notifier.py
+python notificar_jogos_discord.py
 ```
 This will run automatically when Windows starts.
