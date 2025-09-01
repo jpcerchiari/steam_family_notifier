@@ -43,17 +43,17 @@ This will open a graphical interface where you can fill in the required fields. 
 
 The .env file contains the following variables:
 
-- API_KEY: your Steam Web API key (get it here: Steam Web API Key)
+- API_KEY: your Steam Web API key
 
 - DISCORD_TOKEN: your Discord bot token
 
 - DISCORD_CHANNEL_ID: the channel ID where notifications will be sent
 
-- STEAM_IDS: JSON with family member names and their Steam64 IDs. To find your SteamID64, use steamid.io
+- STEAM_IDS: JSON with family member names and their Steam64 IDs. To find your SteamID64, use [steamid.io](https://steamid.io)
 
 - GAMES_FILE: filename where previously detected games are stored (must end with .json)
 
-- LANGUAGE: language code for Steam game data (see Steam Localization Languages)
+- LANGUAGE: language code for Steam game data (see [Steam Localization Languages](https://partner.steamgames.com/doc/store/localization))
 
 
 
